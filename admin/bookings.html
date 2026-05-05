@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - Car Rental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">CarRental Admin</a>
+        <div class="navbar-links" id="authLinks"></div>
+    </nav>
+
+    <div class="admin-grid">
+        <aside class="sidebar">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cars.html">Manage Cars</a>
+            <a href="bookings.html" class="active">Manage Bookings</a>
+            <a href="../index.html">Back to Site</a>
+        </aside>
+
+        <main class="admin-content">
+            <h2 style="margin-bottom: 1.5rem;">Manage Bookings</h2>
+            <div id="bookingsContainer" class="table-container"></div>
+        </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        updateNavbar();
+        requireAdmin();
+        loadAdminBookings();
+    </script>
+</body>
+</html>
+

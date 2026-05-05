@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Cars - Car Rental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">CarRental Admin</a>
+        <div class="navbar-links" id="authLinks"></div>
+    </nav>
+
+    <div class="admin-grid">
+        <aside class="sidebar">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cars.html" class="active">Manage Cars</a>
+            <a href="bookings.html">Manage Bookings</a>
+            <a href="../index.html">Back to Site</a>
+        </aside>
+
+        <main class="admin-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Manage Cars</h2>
+                <button class="btn btn-primary" onclick="openCarModal()">+ Add New Car</button>
+            </div>
+            <div id="carsContainer" class="table-container"></div>
+        </main>
+    </div>
+
+    <!-- Car Modal -->
+    <div class="modal-overlay" id="carModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Add Car</h3>
+                <button class="modal-close" onclick="closeCarModal()">&times;</button>
+            </div>
+            <div id="modalAlert"></div>
+            <form id="carForm">
+                <input type="hidden" id="carId">
+                <div class="form-group">
+                    <label for="carName">Car Name</label>
+                    <input type="text" id="carName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="carType">Type</label>
+                    <select id="carType" class="form-control" required>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="carPrice">Price Per Day ($)</label>
+                    <input type="number" id="carPrice" class="form-control" required min="1" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="carImage">Image URL</label>
+                    <input type="url" id="carImage" class="form-control" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="carAvailable" checked> Available
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Car</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        updateNavbar();
+        requireAdmin();
+        loadAdminCars();
+    </script>
+</body>
+</html>
+

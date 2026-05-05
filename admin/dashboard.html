@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Car Rental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">CarRental Admin</a>
+        <div class="navbar-links" id="authLinks"></div>
+    </nav>
+
+    <div class="admin-grid">
+        <aside class="sidebar">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="cars.html">Manage Cars</a>
+            <a href="bookings.html">Manage Bookings</a>
+            <a href="../index.html">Back to Site</a>
+        </aside>
+
+        <main class="admin-content">
+            <h2 style="margin-bottom: 1.5rem;">Dashboard</h2>
+            <div class="stats-grid" id="statsContainer">
+                <div class="stat-card">
+                    <h3 id="totalCars">-</h3>
+                    <p>Total Cars</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalBookings">-</h3>
+                    <p>Total Bookings</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="pendingBookings">-</h3>
+                    <p>Pending Bookings</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalUsers">-</h3>
+                    <p>Total Users</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 1rem;">Recent Bookings</h3>
+            <div id="recentBookings" class="table-container"></div>
+        </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        updateNavbar();
+        requireAdmin();
+        loadDashboard();
+    </script>
+</body>
+</html>
+

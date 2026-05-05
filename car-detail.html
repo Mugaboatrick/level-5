@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - Car Rental</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">CarRental</a>
+        <div class="navbar-links" id="authLinks"></div>
+    </nav>
+
+    <div class="container">
+        <div id="carDetails"></div>
+
+        <div class="card mt-2" style="max-width: 600px;">
+            <div class="card-body">
+                <h3 class="card-title">Book This Car</h3>
+                <div id="bookingAlert"></div>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="startDate">Pickup Date</label>
+                        <input type="date" id="startDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">Return Date</label>
+                        <input type="date" id="endDate" class="form-control" required>
+                    </div>
+                    <div id="pricePreview" class="mb-2" style="font-weight: 600; color: var(--primary);"></div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Now (Pay Later)</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/booking.js"></script>
+    <script>
+        updateNavbar();
+        loadCarDetail();
+    </script>
+</body>
+</html>
+

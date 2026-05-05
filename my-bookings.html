@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Car Rental</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">CarRental</a>
+        <div class="navbar-links" id="authLinks"></div>
+    </nav>
+
+    <div class="container">
+        <h2 style="margin-bottom: 1.5rem;">My Bookings</h2>
+        <div id="bookingsContainer" class="table-container"></div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/booking.js"></script>
+    <script>
+        updateNavbar();
+        requireAuth();
+        loadMyBookings();
+    </script>
+</body>
+</html>
+
